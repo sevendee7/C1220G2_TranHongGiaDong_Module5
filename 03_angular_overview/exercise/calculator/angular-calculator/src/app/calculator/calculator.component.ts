@@ -9,7 +9,7 @@ export class CalculatorComponent implements OnInit {
 
   firstNumber: number = 0;
   secondNumber: number = 0;
-  result: number = 0;
+  result: any = 0;
   constructor() { }
 
   ngOnInit(): void {
@@ -27,8 +27,11 @@ export class CalculatorComponent implements OnInit {
     this.result = Number(this.firstNumber) * Number(this.secondNumber);
   }
 
-  division(): void {
-    this.result = Number(this.firstNumber) / Number(this.secondNumber);
+  division(): any {
+    if (this.secondNumber == 0) {
+      return this.result = "Can't division to 0";
+    }
+    return this.result = Number(this.firstNumber) / Number(this.secondNumber);
   }
 
   setFirstNumberByChange($event: any): void {
