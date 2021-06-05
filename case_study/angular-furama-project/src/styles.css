@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+ul li a:hover {
+  background-color: #E2C547;
+  transition: .4s ease .25s;
+}
+
+form label {
+  background-color: darkslateblue;
+  color: white;
+}
