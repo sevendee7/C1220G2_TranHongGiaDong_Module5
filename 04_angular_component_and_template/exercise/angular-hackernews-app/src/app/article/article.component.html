@@ -1,0 +1,41 @@
+<h2 class="text-center" style="background-color: #1E3040; color: #8090A6;margin-bottom: 0">Today's article</h2>
+<div class="container-fluid" style="background-color: #BAC8D9; margin-top: 0">
+  <div class="container-fluid">
+    <div *ngFor="let art of articles">
+      <table class="table-borderless m-auto w-50">
+        <tr>
+          <td>
+            <a href="{{art.url}}" target="_blank">{{art.title}}</a>
+          </td>
+          <td class="text-right">
+            <app-like></app-like>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <h2 class="text-center">Article Information</h2>
+    <table class="table-borderless m-auto w-50">
+      <tr>
+        <td>Title:</td>
+        <td><textarea [(ngModel)]="article.title" cols="70"></textarea></td>
+      </tr>
+      <tr>
+        <td>Url:</td>
+        <td>
+          <textarea [(ngModel)]="article.url" cols="70"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="btn btn-outline-success" style="float: right" (click)="addNewArticle()">
+            <i class="fas fa-plus-circle"></i> Add
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
