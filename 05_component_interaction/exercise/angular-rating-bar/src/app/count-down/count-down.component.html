@@ -1,0 +1,10 @@
+<h3>Countdown Timer</h3>
+<div>
+  <input type="number" [(ngModel)]="count">
+</div>
+<div class="group-actions">
+  <button (click)="start()">Start</button>
+  <button (click)="stop()">Stop</button>
+  <button (click)="reset()">Reset</button>
+</div>
+<p>{{ message }}</p>
