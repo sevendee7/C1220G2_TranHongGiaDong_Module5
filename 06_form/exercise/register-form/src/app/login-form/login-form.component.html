@@ -1,0 +1,42 @@
+<form [formGroup]="loginForm" style="width: 400px; margin:auto">
+  <fieldset style="background-image: url('https://designshack.net/wp-content/uploads/bubble-background.jpg')">
+    <h3 style="text-align: center">Login</h3>
+    <table>
+      <tr>
+        <td>Email:</td>
+        <td>
+          <input type="text" formControlName="email"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="loginForm.controls.email.hasError('required')
+        && loginForm.controls.password.dirty">
+          Email can not be empty
+        </p>
+        <p style="color: red" *ngIf="loginForm.controls.email.hasError('pattern')
+        && loginForm.controls.password.dirty">
+        Email should be abc@abc.com
+        </p>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td>
+          <input type="password" formControlName="password">
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="loginForm.controls.password.hasError('required')
+         && loginForm.controls.password.dirty">
+          Password can not be empty
+        </p>
+        <p style="color: red" *ngIf="loginForm.controls.password.hasError('minlength')
+           && loginForm.controls.password.dirty">
+          Password must be > 6 letters
+        </p>
+      </tr>
+      <tr>
+        <input type="submit" value="Log in">
+      </tr>
+    </table>
+  </fieldset>
+</form>

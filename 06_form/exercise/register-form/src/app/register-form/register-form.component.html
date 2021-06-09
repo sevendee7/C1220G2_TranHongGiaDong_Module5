@@ -1,0 +1,72 @@
+<form [formGroup]="register" style="width: 400px; margin: auto">
+  <fieldset style="background-image: url('http://all4desktop.com/data_images/original/4236532-background-images.jpg')">
+    <h3 style="text-align: center">Register Form</h3>
+    <table>
+      <tr>
+        <td>Email:</td>
+        <td>
+          <input type="text" formControlName="email"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="register.controls.email.hasError('required') && register.controls.email.dirty">
+          Email can't empty !
+        </p>
+        <p style="color: red" *ngIf="register.controls.email.hasError('pattern') && register.controls.email.dirty">
+          Email should be abc@abc.com !
+        </p>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td formGroupName="pwGroup">
+          <input type="password" formControlName="password">
+        </td>
+      </tr>
+      <tr>
+        <td>Confirm Password:</td>
+        <td formGroupName="pwGroup">
+          <input type="password" formControlName="confirmPassword"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="register.controls.pwGroup.hasError('passwordnotmatch') && register.controls.pwGroup.dirty">
+          Confirm Password does not match !
+        </p>
+      </tr>
+      <tr>
+        <td>Country</td>
+        <td>
+          <select id="country" formControlName="country">
+            <option value="">Select country</option>
+            <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Date of Birth:</td>
+        <td>
+          <input type="date" formControlName="age"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="register.controls.age.hasError('invalid18') && register.controls.age.dirty">
+          Age need to be > 18 !
+        </p>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <label>
+          <input type="radio" value="Male" formControlName="gender">
+          <span>Male</span>
+        </label>
+        <label>
+          <input type="radio" value="Female" formControlName="gender">
+          <span>Female</span>
+        </label>
+      </tr>
+      <tr>
+        <input type="submit" value="Register"/>
+      </tr>
+    </table>
+  </fieldset>
+</form>
