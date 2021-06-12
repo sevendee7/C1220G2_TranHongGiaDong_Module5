@@ -1,4 +1,4 @@
-<header>
+<div class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
        style="background-image: url('https://wallpaperaccess.com/full/732257.jpg')">
     <img src="https://www.hosco.com/image/logo/2970/200/200" width="100" height="75">
@@ -6,15 +6,14 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="">Customer<span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/home">Home Page<span class="sr-only">(current)</span></a>
         </li>
-<!--        <li class="nav-item active">-->
-<!--          <a class="nav-link" href="#">Employee<span class="sr-only">(current)</span></a>-->
-<!--        </li>-->
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/customers/list">Customer<span class="sr-only">(current)</span></a>
+        </li>
 <!--        <li class="nav-item active">-->
 <!--          <a class="nav-link" href="#">Service<span class="sr-only">(current)</span></a>-->
 <!--        </li>-->
@@ -31,4 +30,4 @@
       </form>
     </div>
   </nav>
-</header>
+</div>

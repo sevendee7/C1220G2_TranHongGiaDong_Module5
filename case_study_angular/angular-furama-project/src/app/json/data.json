@@ -1,0 +1,103 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "customerId": "KH-1111",
+      "customerType": "Diamond",
+      "name": "Nguyễn Đức Hậu",
+      "dateOfBirth": "06/04/2005",
+      "idNumber": "201732015",
+      "phoneNumber": "0772785771",
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "customerId": "KH-1112",
+      "customerType": "Diamond",
+      "name": "Nguyễn Đức Sang",
+      "dateOfBirth": "06/04/2000",
+      "idNumber": "201732017",
+      "phoneNumber": "0772785772",
+      "email": "ducsang@gmail.com",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 3,
+      "customerId": "KH-1113",
+      "customerType": "Gold",
+      "name": "Nguyễn Đức Tài",
+      "dateOfBirth": "06/04/2002",
+      "idNumber": "201732010",
+      "phoneNumber": "0772785700",
+      "email": "ductai@gmail.com",
+      "address": "Huế"
+    },
+    {
+      "id": 4,
+      "customerId": "KH-1114",
+      "customerType": "Silver",
+      "name": "Nguyễn Đức Công",
+      "dateOfBirth": "06/05/2001",
+      "idNumber": "201732009",
+      "phoneNumber": "0772785717",
+      "email": "duccong@gmail.com",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 5,
+      "customerId": "KH-1115",
+      "customerType": "Platinum",
+      "name": "Nguyễn Đức Đông",
+      "dateOfBirth": "06/04/1999",
+      "idNumber": "201732022",
+      "phoneNumber": "0772785722",
+      "email": "ducdong@gmail.com",
+      "address": "Hà Nội"
+    },
+    {
+      "id": 6,
+      "customerId": "KH-1116",
+      "customerType": "Silver",
+      "name": "Nguyễn Đức Tuấn",
+      "dateOfBirth": "02/04/2003",
+      "idNumber": "201732000",
+      "phoneNumber": "0772785991",
+      "email": "ductuan@gmail.com",
+      "address": "Quảng Trị"
+    },
+    {
+      "customerId": "KH-1234",
+      "customerType": "Platinum",
+      "name": "Gia Dong",
+      "dateOfBirth": "2003-02-05",
+      "idNumber": "123123123",
+      "phoneNumber": "0901123456",
+      "email": "dongtran@gmail.com",
+      "address": "Đà Nẵng",
+      "id": 7
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ]
+}

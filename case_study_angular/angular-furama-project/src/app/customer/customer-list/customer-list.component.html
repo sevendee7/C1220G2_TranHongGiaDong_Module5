@@ -1,0 +1,45 @@
+<h2 class="text-center text-danger"> Customer List</h2>
+<div class="row">
+  <div class="col">
+    <table class="table table-hover" style="margin-top: 5%">
+      <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">ID</th>
+        <th scope="col">Customer Type</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope="col">Edit</th>
+        <th scope="col">View</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cus of customerList | slice: (page-1) * pageSize : page * pageSize" >
+        <td>{{cus.id}}</td>
+        <td>{{cus.customerId}}</td>
+        <td>{{cus.customerType}}</td>
+        <td>{{cus.name}}</td>
+        <td>{{cus.phoneNumber}}</td>
+        <td>{{cus.address}}</td>
+        <td>
+          <a class="btn btn-primary" role="button" [routerLink]="['/customer.edit', cus.id]">Edit</a>
+        </td>
+        <td>
+          <a class="btn btn-primary" role="button">View</a>
+        </td>
+<!--        <td>-->
+<!--          <a class="btn btn-primary" role="button" (click)="deleteCustomer(cus.id)">Delete</a>-->
+<!--        </td>-->
+      </tr>
+      </tbody>
+    </table>
+    <div class="text-right">
+      <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="collectionSize"></ngb-pagination>
+    </div>
+  </div>
+</div>
