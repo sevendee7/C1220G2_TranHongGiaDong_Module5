@@ -36,6 +36,5 @@ export class ProductEditComponent implements OnInit {
   updateProduct(id: number) {
     const product = this.productForm.value;
     this.productService.updateProduct(id, product);
-    alert('Cập nhật thành công');
   }
 }

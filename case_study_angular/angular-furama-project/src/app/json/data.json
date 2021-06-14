@@ -65,17 +65,6 @@
       "phoneNumber": "0772785991",
       "email": "ductuan@gmail.com",
       "address": "Quảng Trị"
-    },
-    {
-      "customerId": "KH-1234",
-      "customerType": "Platinum",
-      "name": "Gia Dong",
-      "dateOfBirth": "2003-02-05",
-      "idNumber": "123123123",
-      "phoneNumber": "0901123456",
-      "email": "dongtran@gmail.com",
-      "address": "Đà Nẵng",
-      "id": 7
     }
   ],
   "customerType": [

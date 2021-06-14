@@ -1,0 +1,124 @@
+<div class="container-fluid">
+  <form class="form-group w-50 m-auto" [formGroup]="customerEditForm" (ngSubmit)="updateCustomer(id)" *ngIf="customerEditForm">
+    <table class="table table-striped">
+      <h3>Edit Customer</h3>
+      <tr>
+        <td>Customer Code:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="customerId"
+                 [ngClass]="{'is-invalid': submitted && customerEditForm.controls.customerId.errors}"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerEditForm.controls.customerId.hasError('required') && customerEditForm.controls.customerId.dirty">
+          * Customer code can't empty !
+        </p>
+        <p style="color: red" *ngIf="customerEditForm.controls.customerId.hasError('pattern') && customerEditForm.controls.customerId.dirty">
+          * Customer code should be a KH-XXXX !
+        </p>
+      </tr>
+      <tr>
+        <td>Customer Type:</td>
+        <td>
+          <select id="customerType" class="form-control" formControlName="customerType"
+                  [ngClass]="{'is-invalid': submitted && customerEditForm.controls.customerType.errors}">
+            <option value="" disabled>Choose customer type</option>
+            <option [ngValue]="c.name" *ngFor="let c of customerTypes">
+              {{c.name}}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerEditForm.controls.customerType.hasError('required') && customerEditForm.controls.customerType.dirty">
+          * Customer Type can't empty !
+        </p>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="name"
+                 [ngClass]="{'is-invalid': submitted && customerEditForm.controls.name.errors}"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerEditForm.controls.name.hasError('required') && customerEditForm.controls.name.dirty">
+          * Name can't empty !
+        </p>
+      </tr>
+      <tr>
+        <td>Date of Birth:</td>
+        <td>
+          <input class="form-control" type="date" formControlName="dateOfBirth"
+                 [ngClass]="{'is-invalid': submitted && customerEditForm.controls.dateOfBirth.errors}"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerEditForm.controls.dateOfBirth.hasError('required') && customerEditForm.controls.dateOfBirth.dirty">
+          * Date of birth can't empty !
+        </p>
+      </tr>
+      <tr>
+        <td>Id Card:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="idNumber"
+                 [ngClass]="{'is-invalid': submitted && customerEditForm.controls.idNumber.errors}"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerEditForm.controls.idNumber.hasError('required') && customerEditForm.controls.idNumber.dirty">
+          * ID Card can't empty !
+        </p>
+        <p style="color: red" *ngIf="customerEditForm.controls.idNumber.hasError('pattern') && customerEditForm.controls.idNumber.dirty">
+          * ID Card should be a 9 digits number !
+        </p>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="phoneNumber"
+                 [ngClass]="{'is-invalid': submitted && customerEditForm.controls.phoneNumber.errors}"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerEditForm.controls.phoneNumber.hasError('required') && customerEditForm.controls.phoneNumber.dirty">
+          * Phone number can't empty !
+        </p>
+        <p style="color: red" *ngIf="customerEditForm.controls.phoneNumber.hasError('pattern') && customerEditForm.controls.phoneNumber.dirty">
+          * Phone number format should be 090XXXXXXX !
+        </p>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="email"
+                 [ngClass]="{'is-invalid': submitted && customerEditForm.controls.email.errors}"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerEditForm.controls.email.hasError('required') && customerEditForm.controls.email.dirty">
+          * Email can't empty !
+        </p>
+        <p style="color: red" *ngIf="customerEditForm.controls.email.hasError('pattern') && customerEditForm.controls.email.dirty">
+          * Email should be abc@abc.com !
+        </p>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="address"
+                 [ngClass]="{'is-invalid': submitted && customerEditForm.controls.address.errors}"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerEditForm.controls.address.hasError('required') && customerEditForm.controls.address.dirty">
+          * Address can't empty !
+        </p>
+      </tr>
+      <tr>
+        <button class="btn btn-outline-primary">Update</button>
+        <button class="btn btn-primary" type="reset" (click)="onReset()">Cancel</button>
+      </tr>
+    </table>
+  </form>
+</div>

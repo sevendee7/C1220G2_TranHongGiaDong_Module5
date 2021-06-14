@@ -1,4 +1,7 @@
-<h2 class="text-center text-danger"> Customer List</h2>
+<h2 class="text-center text-info"> Customer List</h2>
+<div class="container text-center">
+  <button class="btn-outline-info" routerLink="/customers/create">Create New Customer</button>
+</div>
 <div class="row">
   <div class="col">
     <table class="table table-hover" style="margin-top: 5%">
@@ -16,7 +19,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let cus of customerList | slice: (page-1) * pageSize : page * pageSize" >
+      <tr *ngFor="let cus of customerList | slice: (page-1) * pageSize : page * pageSize">
         <td>{{cus.id}}</td>
         <td>{{cus.customerId}}</td>
         <td>{{cus.customerType}}</td>
@@ -24,14 +27,36 @@
         <td>{{cus.phoneNumber}}</td>
         <td>{{cus.address}}</td>
         <td>
-          <a class="btn btn-primary" role="button" [routerLink]="['/customer.edit', cus.id]">Edit</a>
+          <a class="btn btn-primary" role="button" [routerLink]="['/customers/edit', cus.id]">Edit</a>
         </td>
         <td>
           <a class="btn btn-primary" role="button">View</a>
         </td>
-<!--        <td>-->
-<!--          <a class="btn btn-primary" role="button" (click)="deleteCustomer(cus.id)">Delete</a>-->
-<!--        </td>-->
+        <td>
+            <button type="button" class="btn btn-primary" data-toggle="modal" (click)="sendId(cus.id)" data-target="#exampleModal">
+              Delete
+            </button>
+<!--          <button class="btn btn-lg btn-outline-danger" (click)="open(content)">Delete</button>-->
+<!--&lt;!&ndash;          modal&ndash;&gt;-->
+<!--          <ng-template #content let-c="close" let-d="dismiss">-->
+<!--            <div class="modal-header">-->
+<!--              <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>-->
+<!--              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">-->
+<!--                <span aria-hidden="true">&times;</span>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--              <p>{{cus.customerId}}</p>-->
+<!--              <p>{{cus.name}}</p>-->
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--              <button type="button" class="btn btn-outline-dark"  (click)="deleteCustomer(cus.id)">Delete</button>-->
+<!--              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">-->
+<!--                <span aria-hidden="true">Cancel</span>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </ng-template>-->
+        </td>
       </tr>
       </tbody>
     </table>
@@ -39,7 +64,34 @@
       <ngb-pagination
         [(page)]="page"
         [pageSize]="pageSize"
-        [collectionSize]="collectionSize"></ngb-pagination>
+        [collectionSize]="collectionSize">
+      </ngb-pagination>
     </div>
   </div>
 </div>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="deleteCustomer()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer';
 import {CustomerService} from '../../service/customer.service';
-import {CustomerTypeService} from '../../service/customer-type.service';
-import {CustomerType} from '../../model/customer-type';
+import {ModalDismissReasons, NgbModal, NgbModalConfig} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-customer-list',
@@ -15,9 +14,17 @@ export class CustomerListComponent implements OnInit {
   page = 4;
   pageSize = 4;
   collectionSize = 0;
-  constructor(private customerService: CustomerService){ }
+  closeResult: string = '';
 
-  ngOnInit() {
+  constructor(private customerService: CustomerService,
+              private modalService: NgbModal,
+              config: NgbModalConfig) {
+    config.backdrop = 'static';
+    config.keyboard = false;
+
+  }
+
+  ngOnInit(): void {
     this.getAll();
   }
 
@@ -27,4 +34,27 @@ export class CustomerListComponent implements OnInit {
       this.collectionSize = customerList.length;
     });
   }
+  temp:number;
+  deleteCustomer() {
+    if (this.temp === 1) {
+      this.customerService.deleteCustomer(this.temp).subscribe(() => {
+        console.log(this.temp);
+      }, e => {
+        console.log(e);
+      });
+    }
+  }
+  sendId(id: number) {
+    this.temp=id;
+  }
+
+  // open(content: any) {
+  //   // this.modalService.open(content);
+  //   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+  //     this.closeResult = `Closed with: ${result}`;
+  //   });
+  // }
+
+
+
 }

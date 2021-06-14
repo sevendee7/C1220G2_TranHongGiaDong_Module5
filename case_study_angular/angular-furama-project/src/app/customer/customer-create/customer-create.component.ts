@@ -33,7 +33,6 @@ export class CustomerCreateComponent implements OnInit {
     const customer = this.customerForm.value;
     this.customerService.saveCustomer(customer).subscribe(() => {
       this.customerForm.reset();
-      alert('Tạo thành công');
     }, e => {
       console.log(e);
     });

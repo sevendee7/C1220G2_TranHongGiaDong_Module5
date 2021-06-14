@@ -78,6 +78,9 @@
         <p style="color: red" *ngIf="customerForm.controls.phoneNumber.hasError('required') && customerForm.controls.phoneNumber.dirty">
           * Phone number can't empty !
         </p>
+        <p style="color: red" *ngIf="customerForm.controls.phoneNumber.hasError('pattern') && customerForm.controls.phoneNumber.dirty">
+          * Phone number format should be 090XXXXXXX !
+        </p>
       </tr>
       <tr>
         <td>Email:</td>
