@@ -9,6 +9,7 @@ import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/form
 export class RegisterFormComponent implements OnInit {
 
   public register: FormGroup;
+  public pwGroup: FormGroup;
   countries: string[] = ['USA', 'UK', 'Canada', 'Viet Nam', 'Japan'];
   constructor() {}
 

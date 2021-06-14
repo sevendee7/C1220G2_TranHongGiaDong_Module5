@@ -23,6 +23,14 @@
         </td>
       </tr>
       <tr>
+        <p style="color: red" *ngIf="pwGroup.controls.password.hasError('required') && pwGroup.controls.password.dirty">
+          Password can't empty !
+        </p>
+        <p style="color: red" *ngIf="pwGroup.controls.password.hasError('pattern') && pwGroup.controls.password.dirty">
+          Password should be > 6 letters !
+        </p>
+      </tr>
+      <tr>
         <td>Confirm Password:</td>
         <td formGroupName="pwGroup">
           <input type="password" formControlName="confirmPassword"/>
@@ -41,6 +49,11 @@
             <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
           </select>
         </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="register.controls.country.hasError('required') && register.controls.country.dirty">
+          Country can't empty !
+        </p>
       </tr>
       <tr>
         <td>Date of Birth:</td>
