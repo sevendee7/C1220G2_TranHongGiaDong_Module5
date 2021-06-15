@@ -1,26 +1,4 @@
 {
-  "customerType": [
-    {
-      "id": 1,
-      "name": "Diamond"
-    },
-    {
-      "id": 2,
-      "name": "Platinum"
-    },
-    {
-      "id": 3,
-      "name": "Gold"
-    },
-    {
-      "id": 4,
-      "name": "Silver"
-    },
-    {
-      "id": 5,
-      "name": "Member"
-    }
-  ],
   "customerList": [
     {
       "id": 1,
@@ -78,15 +56,59 @@
       "address": "Hà Nội"
     },
     {
-      "id": 6,
       "customerId": "KH-1116",
-      "customerType": "Silver",
-      "name": "Nguyễn Đức Tuấn",
-      "dateOfBirth": "02/04/2003",
-      "idNumber": "201732000",
-      "phoneNumber": "0772785991",
-      "email": "ductuan@gmail.com",
-      "address": "Quảng Trị"
+      "customerType": "Platinum",
+      "name": "Lee Duwcs Sang",
+      "dateOfBirth": "1992-07-07",
+      "idNumber": "123962482",
+      "phoneNumber": "0901458526",
+      "email": "sangduwcs@gmail.com",
+      "address": "Quảng Nam",
+      "id": 6
+    },
+    {
+      "customerId": "KH-1117",
+      "customerType": "Gold",
+      "name": "Lee Duwsc Hauja",
+      "dateOfBirth": "1997-03-04",
+      "idNumber": "192368485",
+      "phoneNumber": "0901556897",
+      "email": "duwschauja@gmail.com",
+      "address": "Đà Nẵng",
+      "id": 7
+    },
+    {
+      "customerId": "KH-1118",
+      "customerType": "Platinum",
+      "name": "Lee Duwsc Conog",
+      "dateOfBirth": "1990-06-08",
+      "idNumber": "185324789",
+      "phoneNumber": "0901348596",
+      "email": "duwcscongo@gmail.com",
+      "address": "Đà Nẵng",
+      "id": 8
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
     }
   ]
 }

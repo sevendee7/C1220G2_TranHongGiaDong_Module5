@@ -30,12 +30,12 @@ export class CustomerCreateComponent implements OnInit {
   }
 
   submit() {
-    const customer = this.customerForm.value;
-    this.customerService.saveCustomer(customer).subscribe(() => {
-      this.customerForm.reset();
-    }, e => {
-      console.log(e);
-    });
+      const customer = this.customerForm.value;
+      this.customerService.saveCustomer(customer).subscribe(() => {
+        this.customerForm.reset();
+      }, e => {
+        console.log(e);
+      });
   }
 
   getAllCustomerType() {

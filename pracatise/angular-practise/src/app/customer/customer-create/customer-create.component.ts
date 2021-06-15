@@ -1,0 +1,55 @@
+import { Component, OnInit } from '@angular/core';
+import {CustomerType} from '../../model/customer-type';
+import {Customer} from '../../model/customer';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CustomerService} from '../../service/customer.service';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {CustomerTypeService} from '../../service/customer-type.service';
+
+@Component({
+  selector: 'app-customer-create',
+  templateUrl: './customer-create.component.html',
+  styleUrls: ['./customer-create.component.css']
+})
+export class CustomerCreateComponent implements OnInit {
+
+  customerTypes: CustomerType[];
+  customer: Customer;
+  submitted: boolean = false;
+  public customerForm: FormGroup;
+  id: number;
+
+  constructor(private customerService: CustomerService,
+              private customerTypeService: CustomerTypeService,
+              private router: Router) {
+  }
+
+  ngOnInit(): void {
+    this.customerForm = new FormGroup({
+      customerId: new FormControl('', [Validators.required, Validators.pattern('^(KH-)\\d{4}$')]),
+      customerType: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
+      dateOfBirth: new FormControl('', Validators.required),
+      idNumber: new FormControl('', [Validators.required, Validators.pattern('^(\\d{9}|\\d{12})$')]),
+      phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^(090|091|\\(\\+84\\)90|\\(\\+84\\)91)\\d{7}$')]),
+      email: new FormControl('', [Validators.required, Validators.pattern('^[a-z]+([\\_\\.]?[a-z\\d]+)*@[a-z]{3,7}\\.[a-z]{3}$')]),
+      address: new FormControl('', Validators.required)
+    });
+    this.getAllCustomerType();
+  }
+
+  submit() {
+    const customer = this.customerForm.value;
+    this.customerService.saveCustomer(customer).subscribe(() => {
+      this.customerForm.reset();
+    }, e => {
+      console.log(e);
+    }, () => this.router.navigateByUrl('/customers/list'));
+  }
+
+  getAllCustomerType() {
+    this.customerTypeService.getAll().subscribe(customerTypes => {
+      this.customerTypes = customerTypes;
+    });
+  }
+}

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer';
 import {CustomerService} from '../../service/customer.service';
-import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-customer-list',
@@ -10,9 +10,9 @@ import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class CustomerListComponent implements OnInit {
 
-  customerList: Customer[] = [];
-  page = 2;
-  pageSize = 2;
+  customerList: Customer[];
+  page = 1;
+  pageSize = 3;
   collectionSize = 0;
   customerDelete: Customer;
   idDelete: number;
@@ -22,7 +22,6 @@ export class CustomerListComponent implements OnInit {
               config: NgbModalConfig) {
     config.backdrop = 'static';
     config.keyboard = false;
-
   }
 
   ngOnInit(): void {
@@ -35,12 +34,15 @@ export class CustomerListComponent implements OnInit {
       this.collectionSize = customerList.length;
     });
   }
+
   deleteCustomer() {
-      this.customerService.deleteCustomer(this.idDelete).subscribe(() => {
-        console.log(this.idDelete);
-      }, e => {
-        console.log(e);
-      }, () => {this.getAll(); });
+    this.customerService.deleteCustomer(this.idDelete).subscribe(() => {
+      console.log(this.idDelete);
+    }, e => {
+      console.log(e);
+    }, () => {
+      this.getAll();
+    });
   }
 
   sendIdToComponent(id: number) {

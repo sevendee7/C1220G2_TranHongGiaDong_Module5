@@ -1,0 +1,115 @@
+<div class="container-fluid">
+  <form class="form-group w-50 m-auto" [formGroup]="customerForm" (ngSubmit)="submit()">
+    <table class="table table-striped">
+      <h3>Create New Customer</h3>
+      <tr>
+        <td>Customer Code:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="customerId"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerForm.controls.customerId.hasError('required') && customerForm.controls.customerId.dirty">
+          * Customer code can't empty !
+        </p>
+        <p style="color: red" *ngIf="customerForm.controls.customerId.hasError('pattern') && customerForm.controls.customerId.dirty">
+          * Customer code should be a KH-XXXX !
+        </p>
+      </tr>
+      <tr>
+        <td>Customer Type:</td>
+        <td>
+          <select id="customerType" class="form-control" formControlName="customerType">
+            <option value="" disabled>Choose customer type</option>
+            <option [ngValue]="c.name" *ngFor="let c of customerTypes">
+              {{c.name}}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.customerType.dirty">
+          * Customer Type can't empty !
+        </p>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="name"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.dirty">
+          * Name can't empty !
+        </p>
+      </tr>
+      <tr>
+        <td>Date of Birth:</td>
+        <td>
+          <input class="form-control" type="date" formControlName="dateOfBirth"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerForm.controls.dateOfBirth.hasError('required') && customerForm.controls.dateOfBirth.dirty">
+          * Date of birth can't empty !
+        </p>
+      </tr>
+      <tr>
+        <td>Id Card:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="idNumber"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerForm.controls.idNumber.hasError('required') && customerForm.controls.idNumber.dirty">
+          * ID Card can't empty !
+        </p>
+        <p style="color: red" *ngIf="customerForm.controls.idNumber.hasError('pattern') && customerForm.controls.idNumber.dirty">
+          * ID Card should be a 9 digits number !
+        </p>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="phoneNumber"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerForm.controls.phoneNumber.hasError('required') && customerForm.controls.phoneNumber.dirty">
+          * Phone number can't empty !
+        </p>
+        <p style="color: red" *ngIf="customerForm.controls.phoneNumber.hasError('pattern') && customerForm.controls.phoneNumber.dirty">
+          * Phone number format should be 090XXXXXXX !
+        </p>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="email"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.dirty">
+          * Email can't empty !
+        </p>
+        <p style="color: red" *ngIf="customerForm.controls.email.hasError('pattern') && customerForm.controls.email.dirty">
+          * Email should be abc@abc.com !
+        </p>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td>
+          <input class="form-control" type="text" formControlName="address"/>
+        </td>
+      </tr>
+      <tr>
+        <p style="color: red" *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.dirty">
+          * Address can't empty !
+        </p>
+      </tr>
+      <tr>
+        <button class="btn btn-outline-primary">Submit</button>
+      </tr>
+    </table>
+  </form>
+</div>
