@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../../service/customer.service';
 import {CustomerTypeService} from '../../service/customer-type.service';
 import {CustomerType} from '../../model/customer-type';
+import {Route, Router} from '@angular/router';
 
 @Component({
   selector: 'app-customer-create',
@@ -23,7 +24,8 @@ export class CustomerCreateComponent implements OnInit {
   });
   customerTypes: CustomerType[];
   constructor(private customerService: CustomerService,
-              private customerTypeService: CustomerTypeService) { }
+              private customerTypeService: CustomerTypeService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.getAllCustomerType();
@@ -35,7 +37,7 @@ export class CustomerCreateComponent implements OnInit {
         this.customerForm.reset();
       }, e => {
         console.log(e);
-      });
+      }, () => this.router.navigateByUrl('/customers/list'));
   }
 
   getAllCustomerType() {

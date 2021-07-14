@@ -1,0 +1,52 @@
+<main>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="w-75 mx-auto">
+        <div class="col-md-12 contact-form" id="login-form">
+          <h2 class="h1 text-center">Sửa Thông Tin Người Dùng</h2>
+          <form>
+            <div class="form-group">
+              <label for="username">Tên đăng nhập: <span class="text-danger"></span></label>
+              <input type="text" class="form-control" id="username" value="dongthg" readonly/>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="role">Quyền truy cập: <span class="text-danger">*</span></label>
+                  <select name="role" class="form-control" id="role">
+                    <option value="admin" selected>User</option>
+                    <option value="user">Admin</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="category">Bộ phận: <span class="text-danger">*</span></label>
+                  <select name="category" class="form-control" id="category">
+                    <option value="education" selected>Hành chính</option>
+                    <option value="finance">Đào tạo</option>
+                    <option value="commercial">Tuyển sinh</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Họ và tên: <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="name" value="Trần Hồng Gia Đông"/>
+            </div>
+            <div class="form-group">
+              <label for="email">Email: <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="email" value="dongtran@gmail.com"/>
+            </div>
+            <div class="form-group text-right">
+              <input type="reset" class="btn btn-secondary" value="Hủy bỏ">
+              <input type="submit" class="btn btn-primary" value="Lưu lại">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+

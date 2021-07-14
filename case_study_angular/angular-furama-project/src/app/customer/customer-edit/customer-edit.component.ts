@@ -25,7 +25,7 @@ export class CustomerEditComponent implements OnInit {
               private router: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
-      this.getCustomer(this.id);
+      // this.getCustomer(this.id);
     });
   }
 
@@ -59,16 +59,16 @@ export class CustomerEditComponent implements OnInit {
     });
   }
 
-  updateCustomer(id: number) {
-    this.submitted = true;
-    if (this.customerEditForm.invalid) {
-      return;
-    }
-    const customer = this.customerEditForm.value;
-    this.customerService.updateCustomer(id, customer).subscribe(() => {
-      this.router.navigateByUrl('/customers/list')
-    }, e => {
-      console.log(e);
-    })
-  }
+  // updateCustomer(id: number) {
+  //   this.submitted = true;
+  //   if (this.customerEditForm.invalid) {
+  //     return;
+  //   }
+  //   const customer = this.customerEditForm.value;
+  //   this.customerService.updateCustomer(id, customer).subscribe(() => {
+  //     this.router.navigateByUrl('/customers/list')
+  //   }, e => {
+  //     console.log(e);
+  //   })
+  // }
 }

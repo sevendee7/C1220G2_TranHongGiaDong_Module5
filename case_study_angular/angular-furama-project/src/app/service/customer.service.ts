@@ -14,11 +14,11 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(API_URL + '/customerList');
+    return this.http.get<Customer[]>(API_URL + '/customers');
   }
 
   saveCustomer(customer): Observable<Customer> {
-    return this.http.post<Customer>(API_URL + '/customerList', customer);
+    return this.http.post<Customer>(API_URL + '/customers', customer);
   }
 
   findById(id: number): Observable<Customer> {

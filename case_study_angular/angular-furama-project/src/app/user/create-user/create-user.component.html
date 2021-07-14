@@ -1,0 +1,68 @@
+<main>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="w-75 mx-auto">
+        <div class="col-md-12 contact-form" id="login-form">
+          <h2 class="h1 text-center">Thêm Mới Người Dùng</h2>
+          <form>
+            <div class="form-group">
+              <label for="username">Tên đăng nhập: <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="username"/>
+              <small class="text-danger">Tên đăng nhập không được để trống</small>
+            </div>
+            <div class="form-group">
+              <label for="password">Mật khẩu: <span class="text-danger">*</span></label>
+              <input type="password" class="form-control" id="password"/>
+              <small class="text-danger">Mật khẩu không đủ 6-30 kí tự</small>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Xác nhận mật khẩu: <span
+                class="text-danger">*</span></label>
+              <input type="password" class="form-control" id="confirmPassword"/>
+              <small class="text-danger">Xác nhận mật khẩu không đúng</small>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="role">Quyền truy cập: <span class="text-danger">*</span></label>
+                  <select name="role" class="form-control" id="role">
+                    <option value="admin" selected>User</option>
+                    <option value="user">Admin</option>
+                  </select>
+                  <small class="text-danger">Quyền truy cập không được để trống</small>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="category">Bộ phận: <span class="text-danger">*</span></label>
+                  <select name="category" class="form-control" id="category">
+                    <option value="education" selected>Đào tạo</option>
+                    <option value="finance">Hành chính</option>
+                    <option value="commercial">Tuyển sinh</option>
+                  </select>
+                  <small class="text-danger">Bộ phận không được để trống</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Họ và tên: <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="name"/>
+              <small class="text-danger">Họ và tên không được để trống</small>
+            </div>
+            <div class="form-group">
+              <label for="email">Email: <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="email"/>
+              <small class="text-danger">Email không được để trống</small>
+            </div>
+            <div class="form-group text-right">
+              <input type="reset" class="btn btn-secondary" value="Hủy bỏ">
+              <input type="submit" class="btn btn-primary" value="Thêm mới">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+

@@ -34,17 +34,6 @@
       "address": "Đà Nẵng"
     },
     {
-      "id": 2,
-      "customerId": "KH-1112",
-      "customerType": "Diamond",
-      "name": "Nguyễn Đức Sang",
-      "dateOfBirth": "06/04/2000",
-      "idNumber": "201732017",
-      "phoneNumber": "0772785772",
-      "email": "ducsang@gmail.com",
-      "address": "Đà Nẵng"
-    },
-    {
       "id": 3,
       "customerId": "KH-1113",
       "customerType": "Gold",
@@ -87,6 +76,17 @@
       "phoneNumber": "0772785991",
       "email": "ductuan@gmail.com",
       "address": "Quảng Trị"
+    },
+    {
+      "customerId": "KH-1234",
+      "customerType": "Gold",
+      "name": "Gia Dong",
+      "dateOfBirth": "1995-05-05",
+      "idNumber": "123456789",
+      "phoneNumber": "0901223366",
+      "email": "dongtran@gmail.com",
+      "address": "Đà Nẵng",
+      "id": 7
     }
   ]
 }

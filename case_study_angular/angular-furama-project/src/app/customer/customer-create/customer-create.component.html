@@ -28,7 +28,8 @@
         </td>
       </tr>
       <tr>
-        <p style="color: red" *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.customerType.dirty">
+        <p style="color: red" *ngIf="customerForm.controls.customerType.hasError('required')
+        && customerForm.controls.customerType.dirty">
           * Customer Type can't empty !
         </p>
       </tr>
